@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pemsun RD - Beta</title>
+  <link rel="stylesheet" href="uni.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>Pemsun RD</h1>
+        <p class="subtitle">Beta - Progreso universitario para RD</p>
+        <p class="dedication">Dedicado a mi futura esposa Nicole</p>
+      </div>
+      <div class="topbar-actions">
+        <label for="university-select" class="field-label">Universidad y carrera</label>
+        <div class="stack">
+          <select id="university-select" class="select"></select>
+          <input id="career-search-input" class="input" type="text" placeholder="Buscar carrera (ej: economia)" maxlength="80">
+          <select id="career-select" class="select"></select>
+        </div>
+        <div id="career-meta" class="sync-status">Selecciona universidad y carrera</div>
+        <div class="row">
+          <button id="save-state-btn" class="btn-primary" type="button">Guardar cambios</button>
+        </div>
+        <div id="sync-status" class="sync-status">Modo demo (sin API)</div>
+      </div>
+    </header>
+
+    <section class="page" id="page-uni">
+      <div class="page-header">
+        <div>
+          <h2 class="page-title">Universidad</h2>
+          <p class="page-subtitle" id="career-subtitle">Carrera no seleccionada</p>
+        </div>
+        <div class="score-badge">
+          <span class="score-number" id="uni-gpa-val">0</span>
+          <span class="score-label">Promedio</span>
+        </div>
+      </div>
+
+      <div class="uni-tabs" role="tablist" aria-label="Navegacion universidad">
+        <button class="uni-tab active" data-tab="pensum" type="button">Pensum / Progreso</button>
+        <button class="uni-tab" data-tab="agenda" type="button">Agenda de Entregas</button>
+      </div>
+
+      <div id="uni-tab-pensum" class="uni-tab-content active">
+        <div class="bento-grid">
+          <div class="bento-card span-4 center">
+            <div class="big-number" id="uni-cr-approved">0</div>
+            <div class="mini-label">Creditos aprobados</div>
+          </div>
+          <div class="bento-card span-8">
+            <div class="progress-head">
+              <span><strong>Progreso carrera</strong></span>
+              <span id="uni-progress-pct" class="ok-text">0%</span>
+            </div>
+            <div class="progress-track">
+              <div id="uni-progress-bar" class="progress-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="uni-semesters-container"></div>
+      </div>
+
+      <div id="uni-tab-agenda" class="uni-tab-content">
+        <div class="bento-grid">
+          <div class="bento-card span-12">
+            <div class="agenda-head">
+              <h3>Entregas y parciales</h3>
+              <button class="btn-primary" id="open-uni-agenda-modal" type="button">+ Nuevo evento</button>
+            </div>
+            <div id="uni-agenda-list" class="activity-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="uni-grade-modal" class="modal-backdrop hidden" aria-hidden="true">
+    <div class="modal-card">
+      <h3>Registrar nota</h3>
+      <p id="uni-grade-modal-subject" class="modal-subject"></p>
+      <div class="grade-box">
+        <input id="uni-grade-slider" type="range" min="0" max="100" step="1" value="80">
+        <div id="uni-grade-display" class="grade-display">80</div>
+      </div>
+      <p id="uni-grade-warning" class="warning hidden">Una materia se considera aprobada desde 70 puntos.</p>
+      <div class="modal-actions">
+        <button id="cancel-grade-btn" class="btn-secondary" type="button">Cancelar</button>
+        <button id="confirm-grade-btn" class="btn-primary" type="button">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="uni-agenda-modal" class="modal-backdrop hidden" aria-hidden="true">
+    <div class="modal-card">
+      <h3>Nuevo evento</h3>
+      <div class="form-grid">
+        <label>Titulo
+          <input id="uni-agenda-title" class="input" type="text" maxlength="120" placeholder="Parcial 1" />
+        </label>
+        <label>Fecha
+          <input id="uni-agenda-date" class="input" type="date" />
+        </label>
+        <label>Tipo
+          <select id="uni-agenda-type" class="select">
+            <option value="examen">Examen</option>
+            <option value="entrega">Entrega</option>
+            <option value="exposicion">Exposicion</option>
+          </select>
+        </label>
+        <label>Materia
+          <select id="uni-agenda-subject" class="select"></select>
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button id="cancel-agenda-btn" class="btn-secondary" type="button">Cancelar</button>
+        <button id="save-agenda-btn" class="btn-primary" type="button">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="university_data.js"></script>
+  <script src="config.js"></script>
+  <script src="uni.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "subjects": {
+    "BIO-0170": {
+      "state": "passed",
+      "grade": 90
+    },
+    "BIO-0180": {
+      "state": "passed",
+      "grade": 72
+    },
+    "HIS-0110": {
+      "state": "current",
+      "grade": 0
+    },
+    "MAT-0140": {
+      "state": "passed",
+      "grade": 54
+    },
+    "OSI-0310": {
+      "state": "passed",
+      "grade": 72
+    },
+    "SOC-0100": {
+      "state": "passed",
+      "grade": 93
+    },
+    "FIL-0110": {
+      "state": "passed",
+      "grade": 82
+    },
+    "LET-0120": {
+      "state": "current",
+      "grade": 0
+    },
+    "FIS-0200": {
+      "state": "passed",
+      "grade": 70
+    },
+    "LET-0110": {
+      "state": "passed",
+      "grade": 90
+    },
+    "BIO-2105": {
+      "state": "pending",
+      "grade": 0
+    }
+  },
+  "agenda": [
+    {
+      "id": "1774275483739",
+      "title": "Cuestionario sobre La Guerra Restauradora vista desde abajo",
+      "date": "2026-03-26",
+      "type": "entrega",
+      "subjectId": "HIS-0110"
+    }
+  ]
+}

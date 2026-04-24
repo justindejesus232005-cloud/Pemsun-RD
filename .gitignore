@@ -1,0 +1,19 @@
+# Ignore OS/editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
+
+# Node/Python caches (por si luego agregas tooling)
+node_modules/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Planes/PDF pesados (no subir)
+planes universitario/
+planes universitarios/
