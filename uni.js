@@ -1,18 +1,18 @@
 // ==========================================
-// Pemsun RD - University Beta Module
+// Pensum RD - University Beta Module
 // - No localStorage
 // - Backend-first persistence (Apps Script)
 // - Multi university/career selector
 // ==========================================
 
 const APP_CONFIG = {
-  apiBaseUrl: (window.PEMSUN_RD_API_BASE_URL || '').trim(),
+  apiBaseUrl: (window.PENSUM_RD_API_BASE_URL || window.PEMSUN_RD_API_BASE_URL || '').trim(),
   fallbackStatePath: 'universidad.json'
 };
 
 const ALLOWED_SUBJECT_STATES = new Set(['pending', 'current', 'passed']);
 const ALLOWED_EVENT_TYPES = new Set(['examen', 'entrega', 'exposicion']);
-const DEFAULT_STATE_KEY = (window.PEMSUN_RD_STATE_KEY || 'pemsun-rd').trim() || 'pemsun-rd';
+const DEFAULT_STATE_KEY = (window.PENSUM_RD_STATE_KEY || window.PEMSUN_RD_STATE_KEY || 'pensum-rd').trim() || 'pensum-rd';
 
 const APP_UNIVERSITY_CATALOG = Array.isArray(window.UNIVERSITY_CATALOG) ? window.UNIVERSITY_CATALOG : [];
 const UNIVERSITY_INDEX = new Map();

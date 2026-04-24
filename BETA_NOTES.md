@@ -1,4 +1,4 @@
-# Pemsun RD - Notas de Ruta
+# Pensum RD - Notas de Ruta
 
 ## Decision guardada
 - En una fase futura debemos migrar el backend a Firebase de Google.

@@ -1,4 +1,4 @@
-# Pemsun RD - Beta Setup Rapido
+# Pensum RD - Beta Setup Rapido
 
 ## 1) Frontend
 - Archivos principales:
@@ -27,10 +27,10 @@
 
 ## 3) Conectar frontend con backend
 - Abre `config.js` y coloca:
-  - `window.PEMSUN_RD_API_BASE_URL = 'TU_URL_EXEC';`
+  - `window.PENSUM_RD_API_BASE_URL = 'TU_URL_EXEC';`
 
 ## 4) Uso
-- Abre `uni.html`.
+- Abre `index.html`.
 - Escribe la matricula (ID) de estudiante.
 - Selecciona universidad y carrera.
 - Carga, edita progreso, y guarda.
